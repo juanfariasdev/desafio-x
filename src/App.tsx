@@ -1,9 +1,11 @@
 import React from "react";
+import { Header } from "./components/header";
+import "./index.css";
 
 function App() {
   return (
     <div>
-      <h1 className="text-2xl font-bold">Oláa desafio</h1>
+      <Header />
     </div>
   );
 }
