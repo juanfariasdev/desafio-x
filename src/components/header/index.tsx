@@ -3,12 +3,12 @@ function Header() {
   return (
     <header
       className="
-        p-7
+        flex items-center justify-between
+
         bg-blue-800 
         text-white 
-        flex
-        items-center
-        justify-between
+
+        p-7
     "
     >
       <div className="max-w-[58px]">
@@ -16,8 +16,8 @@ function Header() {
           <img src="/logo.png" alt="Logo da YouX Group" />
         </button>
       </div>
-      <div className="flex gap-4 items-center">
-        <div className="flex gap-2 items-center">
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <UserCircle size={46} weight="fill" className="text-white" />
           <div>
             <h3 className="text-2xl">Juan Pablo Farias</h3>
@@ -26,7 +26,14 @@ function Header() {
         </div>
         <div>
           <button
-            className="hover:bg-slate-500 hover:rounded-full transition-all p-2 flex items-center justify-center"
+            className="
+              flex items-center justify-center
+
+              p-2
+              
+              transition-all 
+              hover:bg-slate-500 hover:rounded-full
+              "
             title="Deslogar"
           >
             <SignOut size={46} weight="fill" />
