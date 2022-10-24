@@ -1,13 +1,12 @@
-import React from "react";
-import { Header } from "./components/header";
 import { MagnifyingGlass, Plus } from "phosphor-react";
 
 import "./index.css";
+import { Table } from "./components/Table";
 
 function App() {
   return (
-    <div className="flex justify-center">
-      <div className="w-[1720px] p-6 pt-16">
+    <div className="flex flex-1 justify-center">
+      <div className="w-[1720px] p-6 pt-16 flex flex-col">
         <div className="flex">
           <h1
             className="
@@ -66,6 +65,7 @@ function App() {
             Cadastrar cliente
           </button>
         </div>
+        <Table />
       </div>
     </div>
   );

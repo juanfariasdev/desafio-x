@@ -8,7 +8,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Header />
-    <App />
+    <div className="h-screen flex flex-col">
+      <Header />
+      <App />
+    </div>
   </React.StrictMode>
 );
