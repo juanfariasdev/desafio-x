@@ -3,6 +3,7 @@ import { MagnifyingGlass, Plus } from "phosphor-react";
 import "./index.css";
 import { Table } from "./components/Table";
 import { FormatCnpj, FormatTel } from "./utils/format";
+import { Modal } from "./components/Modal";
 
 function App() {
   return (
@@ -51,20 +52,12 @@ function App() {
             </button>
           </div>
 
-          <button
-            className="
-              flex gap-2 items-center 
-
-            bg-blue-800 
-
-              px-5 py-4 
-
-            text-white text-xl rounded
-          "
+          <Modal
+            icon={<Plus size={20} weight="bold" />}
+            title="Cadastrar cliente"
           >
-            <Plus size={20} weight="bold" />
-            Cadastrar cliente
-          </button>
+            <div>opa</div>
+          </Modal>
         </div>
         <Table
           data={{

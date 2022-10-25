@@ -19,6 +19,7 @@ function Table({ data }: IProps) {
           className="text-xl peer-[:nth-child(3)]:bg-red-500"
           rows={rows}
           columns={columns}
+          localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}
           getRowClassName={(params) => {
             const bgGray =
               params.indexRelativeToCurrentPage % 2 === 0 ? "bg-gray-100" : "";
