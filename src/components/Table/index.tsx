@@ -1,48 +1,32 @@
 import { DataGrid, GridColDef, GridRowsProp } from "@mui/x-data-grid";
+import { FormatCnpj, FormatTel } from "../../utils/format";
 
-const rows: GridRowsProp = [
-  {
-    id: 1,
-    name: "Juan Pablo Farias",
-    cnpj: "61626470000150",
-    email: "juanpablo.p.a.f@gmail.com",
-    tel: "35984228193",
-  },
-  {
-    id: 2,
-    name: "Pedro Lucas",
-    cnpj: "09567412000182",
-    email: "juanpablo.p.a.f@gmail.com",
-    tel: "35984228193",
-  },
-  {
-    id: 3,
-    name: "Jorge Matheus",
-    cnpj: "04917772000143",
-    email: "juanpablo.p.a.f@gmail.com",
-    tel: "35984228193",
-  },
-];
+interface ITable {
+  rows: GridRowsProp;
+  columns: GridColDef[];
+}
 
-const columns: GridColDef[] = [
-  { field: "name", headerName: "Nome", flex: 2 },
-  { field: "cnpj", headerName: "CNPJ", flex: 1 },
-  { field: "email", headerName: "E-mail", flex: 1 },
-  { field: "tel", headerName: "Telefone", width: 100 },
-  {
-    field: "",
-    headerName: "Ações",
-    width: 150,
-    sortable: false,
-    filterable: false,
-  },
-];
+interface IProps {
+  data: ITable;
+}
 
-function Table() {
+function Table({ data }: IProps) {
+  const { rows, columns } = data;
   return (
     <div className="flex flex-1">
       <div className="h-full w-full">
-        <DataGrid rows={rows} columns={columns} />
+        <DataGrid
+          className="text-xl peer-[:nth-child(3)]:bg-red-500"
+          rows={rows}
+          columns={columns}
+          getRowClassName={(params) => {
+            const bgGray =
+              params.indexRelativeToCurrentPage % 2 === 0 ? "bg-gray-100" : "";
+
+            const className = `text-gray-700 font-light ${bgGray}`;
+            return className;
+          }}
+        />
       </div>
     </div>
   );

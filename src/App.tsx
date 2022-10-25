@@ -2,6 +2,7 @@ import { MagnifyingGlass, Plus } from "phosphor-react";
 
 import "./index.css";
 import { Table } from "./components/Table";
+import { FormatCnpj, FormatTel } from "./utils/format";
 
 function App() {
   return (
@@ -65,7 +66,58 @@ function App() {
             Cadastrar cliente
           </button>
         </div>
-        <Table />
+        <Table
+          data={{
+            rows: [
+              {
+                id: 1,
+                name: "Juan Pablo Farias",
+                cnpj: "61626470000150",
+                email: "juanpablo.p.a.f@gmail.com",
+                tel: "35984228193",
+              },
+              {
+                id: 2,
+                name: "Pedro Lucas",
+                cnpj: "09567412000182",
+                email: "juanpablo.p.a.f@gmail.com",
+                tel: "35984228193",
+              },
+              {
+                id: 3,
+                name: "Jorge Matheus",
+                cnpj: "04917772000143",
+                email: "juanpablo.p.a.f@gmail.com",
+                tel: "35984228193",
+              },
+            ],
+            columns: [
+              { field: "name", headerName: "Nome", flex: 2, minWidth: 200 },
+              {
+                field: "cnpj",
+                headerName: "CNPJ",
+                flex: 1,
+                minWidth: 200,
+                valueFormatter: ({ value }) => FormatCnpj(String(value)),
+              },
+              { field: "email", headerName: "E-mail", flex: 1, minWidth: 200 },
+              {
+                field: "tel",
+                headerName: "Telefone",
+                flex: 1,
+                minWidth: 200,
+                valueFormatter: ({ value }) => FormatTel(String(value)),
+              },
+              {
+                field: "",
+                headerName: "Ações",
+                width: 150,
+                sortable: false,
+                filterable: false,
+              },
+            ],
+          }}
+        />
       </div>
     </div>
   );
