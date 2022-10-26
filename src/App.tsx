@@ -4,6 +4,7 @@ import "./index.css";
 import { Table } from "./components/Table";
 import { FormatCnpj, FormatTel } from "./utils/format";
 import { Modal } from "./components/Modal";
+import { FormRegister } from "./components/Forms";
 
 function App() {
   return (
@@ -56,7 +57,9 @@ function App() {
             icon={<Plus size={20} weight="bold" />}
             title="Cadastrar cliente"
           >
-            <div>opa</div>
+            <div>
+              <FormRegister />
+            </div>
           </Modal>
         </div>
         <Table

@@ -36,7 +36,7 @@ function Modal({ icon, title, children }: IProps) {
           aria-hidden="true"
           className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 md:h-full flex justify-center items-center"
         >
-          <div className="relative p-4 w-full max-w-2xl h-full md:h-auto">
+          <div className="relative p-4 w-full max-w-3xl h-full md:h-auto">
             <div className="relative bg-white rounded-lg shadow">
               <div className="flex justify-between items-center p-2 pl-4 rounded-t border-b bg-blue-800">
                 <h3 className="text-xl text-white">{title}</h3>
