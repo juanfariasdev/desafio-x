@@ -110,6 +110,7 @@ function App() {
                 width: 150,
                 sortable: false,
                 filterable: false,
+                disableExport: true,
               },
             ],
           }}

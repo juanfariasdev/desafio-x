@@ -1,4 +1,5 @@
 import { DataGrid, GridColDef, GridRowsProp, ptBR } from "@mui/x-data-grid";
+import { CustomToolbar } from "./customToolbar";
 
 interface ITable {
   rows: GridRowsProp;
@@ -15,9 +16,18 @@ function Table({ data }: IProps) {
     <div className="flex flex-1">
       <div className="h-full w-full">
         <DataGrid
-          className="text-xl peer-[:nth-child(3)]:bg-red-500"
+          className="text-xl rounded overflow-hidden"
           rows={rows}
           columns={columns}
+          components={{
+            Toolbar: CustomToolbar,
+          }}
+          componentsProps={{
+            toolbar: {
+              showQuickFilter: true,
+              quickFilterProps: { debounceMs: 500 },
+            },
+          }}
           localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}
           getRowClassName={(params) => {
             const bgGray =
