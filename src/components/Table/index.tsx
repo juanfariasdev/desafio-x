@@ -1,5 +1,4 @@
-import { DataGrid, GridColDef, GridRowsProp } from "@mui/x-data-grid";
-import { FormatCnpj, FormatTel } from "../../utils/format";
+import { DataGrid, GridColDef, GridRowsProp, ptBR } from "@mui/x-data-grid";
 
 interface ITable {
   rows: GridRowsProp;
