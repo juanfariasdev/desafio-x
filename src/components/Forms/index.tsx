@@ -5,7 +5,9 @@ import { TextField } from "./TextField";
 function FormRegister() {
   const validate = object({
     name: string().required("Digite o nome"),
-    cnpj: string().min(14, "CNPJ inválido").required("Digite o CNPJ"),
+    cnpj: string()
+      .length(14, "CNPJ precisa ter 14 dígitos")
+      .required("Digite o CNPJ"),
     tel: string().required("Digite o telefone"),
     email: string().email("Email inválido").required("Digite o email"),
   });
@@ -26,11 +28,11 @@ function FormRegister() {
         <Form>
           <div className="flex flex-col gap-6">
             <TextField label="Nome" name="name" type="text" />
-            <div className="flex gap-6">
+            <div className="flex gap-6 flex-col sm:flex-row">
               <TextField label="CNPJ" name="cnpj" type="text" />
               <TextField label="Telefone" name="tel" type="text" />
             </div>
-            <div className="flex gap-6">
+            <div className="flex gap-6 flex-col sm:flex-row">
               <TextField label="UF" name="uf" type="text" />
               <TextField label="E-mail" name="email" type="text" />
             </div>
@@ -47,6 +49,11 @@ function FormRegister() {
           >
             Cadastrar
           </button>
+          {!(formik.isValid && formik.dirty) && (
+            <p className="text-base text-gray-700 my-2">
+              * Preencha o formulário corretamente para poder cadastrar
+            </p>
+          )}
         </Form>
       )}
     </Formik>
