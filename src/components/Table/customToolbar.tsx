@@ -16,10 +16,10 @@ function CustomToolbar() {
         <GridToolbarDensitySelector />
         <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
       </div>
-      <div className="">
+      <div className="lg:w-auto w-full">
         <GridToolbarQuickFilter
           placeholder="Pesquisar na lista"
-          className="[&>*]:text-xl bg-white rounded py-0 px-2"
+          className="[&>*]:text-xl bg-white rounded py-0 px-2 [*>&]:!w-full"
         />
       </div>
     </GridToolbarContainer>

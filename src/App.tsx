@@ -8,7 +8,7 @@ import { FormRegister } from "./components/Forms";
 
 function App() {
   return (
-    <div className="flex flex-1 justify-center">
+    <div className="flex flex-1 justify-center h-full">
       <div className="w-[1720px] p-6 pt-16 flex flex-col">
         <div className="flex">
           <h1

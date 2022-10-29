@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { Header } from "./components/header";
+import { Dashboard } from "./template/dashboard";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -9,8 +9,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <div className="h-screen flex flex-col">
-      <Header />
-      <App />
+      <Dashboard>
+        <App />
+      </Dashboard>
     </div>
   </React.StrictMode>
 );
