@@ -7,6 +7,7 @@ function RoutesNavigation() {
     <Router>
       <Routes>
         <Route path="/lista/clientes" element={<ClienteLista />} />
+        <Route path="/lista/vendas" element={<VendasLista />} />
       </Routes>
     </Router>
   );
