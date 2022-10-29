@@ -9,9 +9,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <div className="h-screen flex flex-col">
-      <Dashboard>
-        <App />
-      </Dashboard>
+      <App />
     </div>
   </React.StrictMode>
 );
