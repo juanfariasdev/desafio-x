@@ -1,8 +1,9 @@
+import { format } from "date-fns";
 import { MagnifyingGlass, Plus } from "phosphor-react";
 import { FormRegister } from "../../components/Forms";
 import { Modal } from "../../components/Modal";
 import { Table } from "../../components/Table";
-import { FormatCnpj, FormatTel } from "../../utils/format";
+import { FormatDate, FormatStatus, FormatTel } from "../../utils/format";
 
 function VendasLista() {
   return (
@@ -81,20 +82,23 @@ function VendasLista() {
               headerName: "Data",
               flex: 1,
               minWidth: 200,
+              valueFormatter: ({ value }: { value: string }) =>
+                FormatDate(value),
             },
             {
               field: "status",
               headerName: "Status",
               flex: 1,
               minWidth: 200,
-              valueFormatter: ({ value }) => FormatTel(String(value)),
+              valueFormatter: ({ value }: { value: number }) =>
+                FormatStatus(value),
             },
             {
               field: "valor",
-              headerName: "Telefone",
+              headerName: "Valor",
               flex: 1,
               minWidth: 200,
-              valueFormatter: ({ value }) => FormatTel(String(value)),
+              valueFormatter: ({ value }: { value: number }) => `R$${value}`,
             },
             {
               field: "",
